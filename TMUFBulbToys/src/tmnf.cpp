@@ -1,28 +1,28 @@
-#include "tmuf.h"
+#include "tmnf.h"
 
 #include "../core/bulbtoys.h"
 
 #include <string>
 
-uintptr_t TMUF::BulbToys_GetEngine(_Engine e)
-{
-	uintptr_t mw_engine_main = Read<uintptr_t>(0xD74960);
-	if (!mw_engine_main)
-	{
-		return 0;
-	}
+//uintptr_t TMNF::BulbToys_GetEngine(_Engine e)
+//{
+//	uintptr_t mw_engine_main = Read<uintptr_t>(0xD74960);
+//	if (!mw_engine_main)
+//	{
+//		return 0;
+//	}
+//
+//	int index = (int)e;
+//	auto engines = reinterpret_cast<TMUF::CFastBuffer<uintptr_t>*>(mw_engine_main + 0x20);
+//	if (index >= engines->size)
+//	{
+//		return 0;
+//	}
+//
+//	return engines->pElems[index];
+//}
 
-	int index = (int)e;
-	auto engines = reinterpret_cast<TMUF::CFastBuffer<uintptr_t>*>(mw_engine_main + 0x20);
-	if (index >= engines->size)
-	{
-		return 0;
-	}
-
-	return engines->pElems[index];
-}
-
-const char* TMUF::BulbToys_GetClassName(uintptr_t vtable)
+const char* TMNF::BulbToys_GetClassName(uintptr_t vtable)
 {
 	static mINI::INIStructure ini;
 	static bool loaded = false;
@@ -47,17 +47,17 @@ const char* TMUF::BulbToys_GetClassName(uintptr_t vtable)
 	return name;
 }
 
-LPVOID TMUF::BulbToys_GetDI8Device(int index)
+LPVOID TMNF::BulbToys_GetDI8Device(int index)
 {
 	LPVOID device = nullptr;
 
-	auto input_port = Read<uintptr_t>(0xD72DE8);
+	auto input_port = Read<uintptr_t>(0xD71788);
 	if (input_port)
 	{
 		auto input_port_vtbl = Read<uintptr_t>(input_port);
-		if (input_port_vtbl == 0xBBEE64)
+		if (input_port_vtbl == 0xBBEE84)
 		{
-			auto input_device_array = reinterpret_cast<TMUF::CFastArray<uintptr_t>*>(input_port + 0x2C);
+			auto input_device_array = reinterpret_cast<TMNF::CFastArray<uintptr_t>*>(input_port + 0x2C);
 
 			device = Read<LPVOID>(input_device_array->pElems[index] + 0x3C);
 		}
@@ -66,58 +66,58 @@ LPVOID TMUF::BulbToys_GetDI8Device(int index)
 	return device;
 }
 
-uintptr_t TMUF::BulbToys_GetControlFromFrame(const char* frame, const char* control)
-{
-	auto trackmania = TMUF::BulbToys_GetTrackMania();
-	if (!trackmania)
-	{
-		return 0;
-	}
+//uintptr_t TMNF::BulbToys_GetControlFromFrame(const char* frame, const char* control)
+//{
+//	auto trackmania = TMUF::BulbToys_GetTrackMania();
+//	if (!trackmania)
+//	{
+//		return 0;
+//	}
+//
+//	auto menu = Read<uintptr_t>(trackmania + 0x194);
+//	if (!menu)
+//	{
+//		return 0;
+//	}
+//
+//	auto game_menu = Read<uintptr_t>(menu + 0x788);
+//	if (!game_menu)
+//	{
+//		return 0;
+//	}
+//	auto frames = reinterpret_cast<TMNF::CFastBuffer<uintptr_t>*>(game_menu + 0x68);
+//
+//	CMwId frame_mwid;
+//	TMNF::CMwId_CreateFromLocalName(&frame_mwid, frame);
+//
+//	// CControlContainer* ccc = CFastBuffer<4>::GetNodFromId(frames, &frame_mwid);
+//	uintptr_t container = reinterpret_cast<uintptr_t(__thiscall*)(TMNF::CFastBuffer<uintptr_t>*, CMwId*)>(0x57AF90)(frames, &frame_mwid);
+//	if (!container)
+//	{
+//		return 0;
+//	}
+//
+//	CMwId control_mwid;
+//	TMNF::CMwId_CreateFromLocalName(&control_mwid, control);
+//
+//	// CControlContainer::GetChildFromId(ccc, control_mwid, 1);
+//	return reinterpret_cast<uintptr_t(__thiscall*)(uintptr_t, CMwId*, int)>(0x767620)(container, &control_mwid, 1);
+//}
+//
+//bool TMNF::BulbToys_MwIsKindOf(uintptr_t mw, TMNF::_MwClassId cid)
+//{
+//	using MwIsKindOfFn = bool(__thiscall*)(uintptr_t, TMNF::_MwClassId);
+//	auto MwIsKindOf = reinterpret_cast<MwIsKindOfFn>(Virtual<4>(mw));
+//	return MwIsKindOf(mw, cid);
+//}
 
-	auto menu = Read<uintptr_t>(trackmania + 0x194);
-	if (!menu)
-	{
-		return 0;
-	}
-
-	auto game_menu = Read<uintptr_t>(menu + 0x788);
-	if (!game_menu)
-	{
-		return 0;
-	}
-	auto frames = reinterpret_cast<TMUF::CFastBuffer<uintptr_t>*>(game_menu + 0x68);
-
-	CMwId frame_mwid;
-	TMUF::CMwId_CreateFromLocalName(&frame_mwid, frame);
-
-	// CControlContainer* ccc = CFastBuffer<4>::GetNodFromId(frames, &frame_mwid);
-	uintptr_t container = reinterpret_cast<uintptr_t(__thiscall*)(TMUF::CFastBuffer<uintptr_t>*, CMwId*)>(0x57AF90)(frames, &frame_mwid);
-	if (!container)
-	{
-		return 0;
-	}
-
-	CMwId control_mwid;
-	TMUF::CMwId_CreateFromLocalName(&control_mwid, control);
-
-	// CControlContainer::GetChildFromId(ccc, control_mwid, 1);
-	return reinterpret_cast<uintptr_t(__thiscall*)(uintptr_t, CMwId*, int)>(0x767620)(container, &control_mwid, 1);
-}
-
-bool TMUF::BulbToys_MwIsKindOf(uintptr_t mw, TMUF::_MwClassId cid)
-{
-	using MwIsKindOfFn = bool(__thiscall*)(uintptr_t, TMUF::_MwClassId);
-	auto MwIsKindOf = reinterpret_cast<MwIsKindOfFn>(Virtual<4>(mw));
-	return MwIsKindOf(mw, cid);
-}
-
-std::vector<ImGui::TMUF_TextSlice> ImGui::TMUF_Parse(const char* text)
+std::vector<ImGui::TMNF_TextSlice> ImGui::TMNF_Parse(const char* text)
 {
 	std::stringstream stream(text);
 	std::string buffer;
 
 	// we will split our string into slices, based on what color they should be in
-	std::vector<ImGui::TMUF_TextSlice> slices;
+	std::vector<ImGui::TMNF_TextSlice> slices;
 
 	// things we need to remember when reading the stream
 	bool link = false;
@@ -349,14 +349,14 @@ std::vector<ImGui::TMUF_TextSlice> ImGui::TMUF_Parse(const char* text)
 	return slices;
 }
 
-void ImGui::TMUF_Text(const char* text)
+void ImGui::TMNF_Text(const char* text)
 {
-	auto slices = ImGui::TMUF_Parse(text);
+	auto slices = ImGui::TMNF_Parse(text);
 
-	ImGui::TMUF_TextEx(slices, text);
+	ImGui::TMNF_TextEx(slices, text);
 }
 
-void ImGui::TMUF_TextEx(std::vector<ImGui::TMUF_TextSlice>& slices, const char* tooltip)
+void ImGui::TMNF_TextEx(std::vector<ImGui::TMNF_TextSlice>& slices, const char* tooltip)
 {
 	bool after_first = false;
 	for (auto& slice : slices)
@@ -390,18 +390,18 @@ void ImGui::TMUF_TextEx(std::vector<ImGui::TMUF_TextSlice>& slices, const char* 
 	}
 }
 
-void ImGui::TMUF_InputFastString(TMUF::CFastString& fast_string, const char* label, char* buf, size_t buf_size, ImGuiInputTextFlags flags,
-	ImGuiInputTextCallback callback, void* user_data)
-{
-	// copy fast string to our text box
-	MYPRINTF(buf, buf_size, "%s", fast_string.psz);
-
-	// then invoke the text box
-	ImGui::InputText(label, buf, buf_size, flags, callback, user_data);
-
-	// finally, copy the text from our text box if changed
-	if (strcmp(buf, fast_string.psz))
-	{
-		fast_string.SetString(strlen(buf), buf);
-	}
-}
+//void ImGui::TMNF_InputFastString(TMNF::CFastString& fast_string, const char* label, char* buf, size_t buf_size, ImGuiInputTextFlags flags,
+//	ImGuiInputTextCallback callback, void* user_data)
+//{
+//	// copy fast string to our text box
+//	MYPRINTF(buf, buf_size, "%s", fast_string.psz);
+//
+//	// then invoke the text box
+//	ImGui::InputText(label, buf, buf_size, flags, callback, user_data);
+//
+//	// finally, copy the text from our text box if changed
+//	if (strcmp(buf, fast_string.psz))
+//	{
+//		fast_string.SetString(strlen(buf), buf);
+//	}
+//}

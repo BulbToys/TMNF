@@ -24,6 +24,7 @@
     <ProjectGuid>{7ba10bf2-07a7-4b32-aa85-091f21f7ca56}</ProjectGuid>
     <RootNamespace>TMUFBulbToys</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TMNFBulbToys</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -199,7 +200,7 @@
     <ClCompile Include="src\modules\server.cpp" />
     <ClCompile Include="src\modules\test.cpp" />
     <ClCompile Include="src\modules\stats.cpp" />
-    <ClCompile Include="src\tmuf.cpp" />
+    <ClCompile Include="src\tmnf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\bulbtoys.h" />
@@ -233,8 +234,8 @@
     <ClInclude Include="core\minhook\minhook.h" />
     <ClInclude Include="core\minhook\trampoline.h" />
     <ClInclude Include="core\mini\ini.h" />
-    <ClInclude Include="src\tmuf.h" />
-    <ClInclude Include="src\tmuf_mwcid.h" />
+    <ClInclude Include="src\tmnf.h" />
+    <ClInclude Include="src\tmnf_mwcid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

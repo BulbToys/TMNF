@@ -1,0 +1,84 @@
+﻿  gui.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\gui.cpp(941,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  hooks.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\hooks.cpp(90,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  io.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\io.cpp(607,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  main.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\main.cpp(200,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  modules.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\modules.cpp(101,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  my_imgui.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\my_imgui.cpp(177,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  settings.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\settings.cpp(139,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  utils.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\utils.cpp(301,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  version.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\bulbtoys\version.cpp(8,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui.cpp(1787,10): error C2006: '#include': expected "FILENAME" or <FILENAME>
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui.cpp(2532,9): warning C4005: 'va_copy': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui.cpp(2530,9):
+      see previous definition of 'va_copy'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui.cpp(14628,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_demo.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(136,9): warning C4005: 'IM_NEWLINE': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(134,9):
+      see previous definition of 'IM_NEWLINE'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(153,9): warning C4005: 'IM_PRId64': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(150,9):
+      see previous definition of 'IM_PRId64'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(154,9): warning C4005: 'IM_PRIu64': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(151,9):
+      see previous definition of 'IM_PRIu64'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(170,9): warning C4005: 'IMGUI_CDECL': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(168,9):
+      see previous definition of 'IMGUI_CDECL'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_demo.cpp(8046,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_draw.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_draw.cpp(121,10): error C2006: '#include': expected "FILENAME" or <FILENAME>
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_draw.cpp(145,10): error C2006: '#include': expected "FILENAME" or <FILENAME>
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_draw.cpp(4175,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_impl_dx9.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_impl_dx9.cpp(64,9): warning C4005: 'IMGUI_COL_TO_DX9_ARGB': macro redefinition
+      C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_impl_dx9.cpp(62,9):
+      see previous definition of 'IMGUI_COL_TO_DX9_ARGB'
+  
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_impl_dx9.cpp(380,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_impl_win32.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_impl_win32.cpp(827,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_tables.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_tables.cpp(4118,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  imgui_widgets.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\core\imgui\imgui_widgets.cpp(8556,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  dllmain.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\dllmain.cpp(47,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  analyser.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\analyser.cpp(31,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  emotes_window.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\emotes_window.cpp(160,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  ghosts.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\ghosts.cpp(85,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Generating Code...
+  Compiling...
+  profile.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\profile.cpp(102,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  image_test.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\image_test.cpp(57,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  trail.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\trail.cpp(111,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  server.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\server.cpp(52,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  test.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\test.cpp(118,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  stats.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\modules\stats.cpp(302,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  tmnf.cpp
+C:\Projects\BulbToys\TMNF\TMUFBulbToys\src\tmnf.cpp(408,1): error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Generating Code...

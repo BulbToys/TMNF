@@ -1,6 +1,6 @@
 #pragma once
 
-namespace TMUF
+namespace TMNF
 {
 	enum _MwClassId : unsigned __int32
 	{

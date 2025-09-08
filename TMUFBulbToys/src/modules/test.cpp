@@ -1,5 +1,5 @@
 #include "../../core/bulbtoys.h"
-#include "../tmuf.h"
+#include "../tmnf.h"
 
 namespace test
 {
@@ -10,64 +10,64 @@ namespace test
 
 		virtual bool Draw() override final
 		{
-			auto trackmania = TMUF::BulbToys_GetTrackMania();
+			auto trackmania = TMNF::BulbToys_GetTrackMania();
 
-			if (ImGui::BulbToys_Menu("Test Features"))
-			{
-				auto network = Read<uintptr_t>(trackmania + 0x12C);
-				auto master_server = Read<uintptr_t>(network + 0x1B0);
-				auto features = reinterpret_cast<TMUF::CFastBuffer<TMUF::CGameMasterServer_SFeature>*>(master_server + 0x2B0);
-				auto count = features->size;
-
-				if (count > 0)
-				{
-					if (ImGui::BeginTable("FeatureTable", 3, ImGuiTableFlags_SizingFixedFit))
-					{
-						// todo implement two-way sorting (asc and desc)
-						ImGui::TableNextRow();
-						ImGui::TableSetColumnIndex(0);
-						ImGui::Text("#");
-						ImGui::TableSetColumnIndex(1);
-						ImGui::Text("Feature");
-						ImGui::TableSetColumnIndex(2);
-						ImGui::Text("Value");
-
-						for (int row = 0; row < count; row++)
-						{
-							auto feature = features->pElems[row];
-
-							TMUF::CFastString name;
-							TMUF::CMwId_GetName(&feature._ID, &name);
-
-							ImGui::TableNextRow();
-							for (int column = 0; column < 3; column++)
-							{
-								ImGui::TableSetColumnIndex(column);
-
-								switch (column)
-								{
-								case 0: ImGui::Text("%d", row + 1); break;
-								case 1: ImGui::Text("%s", name.psz); break;
-								case 2: ImGui::Text("%d", feature._Value); break;
-								default: break;
-								}
-							}
-						}
-						ImGui::EndTable();
-					}
-				}
-				else
-				{
-					ImGui::Text("No features found");
-				}
-			}
+			//if (ImGui::BulbToys_Menu("Test Features"))
+			//{
+			//	auto network = Read<uintptr_t>(trackmania + 0x12C);
+			//	auto master_server = Read<uintptr_t>(network + 0x1B0);
+			//	auto features = reinterpret_cast<TMUF::CFastBuffer<TMUF::CGameMasterServer_SFeature>*>(master_server + 0x2B0);
+			//	auto count = features->size;
+			//
+			//	if (count > 0)
+			//	{
+			//		if (ImGui::BeginTable("FeatureTable", 3, ImGuiTableFlags_SizingFixedFit))
+			//		{
+			//			// todo implement two-way sorting (asc and desc)
+			//			ImGui::TableNextRow();
+			//			ImGui::TableSetColumnIndex(0);
+			//			ImGui::Text("#");
+			//			ImGui::TableSetColumnIndex(1);
+			//			ImGui::Text("Feature");
+			//			ImGui::TableSetColumnIndex(2);
+			//			ImGui::Text("Value");
+			//
+			//			for (int row = 0; row < count; row++)
+			//			{
+			//				auto feature = features->pElems[row];
+			//
+			//				TMUF::CFastString name;
+			//				TMUF::CMwId_GetName(&feature._ID, &name);
+			//
+			//				ImGui::TableNextRow();
+			//				for (int column = 0; column < 3; column++)
+			//				{
+			//					ImGui::TableSetColumnIndex(column);
+			//
+			//					switch (column)
+			//					{
+			//					case 0: ImGui::Text("%d", row + 1); break;
+			//					case 1: ImGui::Text("%s", name.psz); break;
+			//					case 2: ImGui::Text("%d", feature._Value); break;
+			//					default: break;
+			//					}
+			//				}
+			//			}
+			//			ImGui::EndTable();
+			//		}
+			//	}
+			//	else
+			//	{
+			//		ImGui::Text("No features found");
+			//	}
+			//}
 
 			if (ImGui::BulbToys_Menu("Test Format"))
 			{
 				char string[128] { 0 };
 
 				ImGui::InputText("##FTest", string, IM_ARRAYSIZE(string));
-				ImGui::TMUF_Text(string);
+				ImGui::TMNF_Text(string);
 			}
 
 			if (ImGui::BulbToys_Menu("Test GetClassName"))
@@ -81,7 +81,7 @@ namespace test
 					if (!deref)
 					{
 						// do not dereference, this is a pointer to a vtable
-						ImGui::Text("Class: %s", TMUF::BulbToys_GetClassName(addr));
+						ImGui::Text("Class: %s", TMNF::BulbToys_GetClassName(addr));
 					}
 					else
 					{
@@ -89,7 +89,7 @@ namespace test
 						Unprotect _(addr, 4);
 						auto vtbl = Read<uintptr_t>(addr);
 						ImGui::BulbToys_AddyLabel(vtbl, "VTable");
-						ImGui::Text("Class: %s", TMUF::BulbToys_GetClassName(vtbl));
+						ImGui::Text("Class: %s", TMNF::BulbToys_GetClassName(vtbl));
 					}
 				}
 				else

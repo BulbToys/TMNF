@@ -81,7 +81,7 @@
     <ClCompile Include="src\modules\stats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\tmuf.cpp">
+    <ClCompile Include="src\tmnf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\modules\test.cpp">
@@ -200,7 +200,7 @@
     <ClInclude Include="core\bulbtoys.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\tmuf.h">
+    <ClInclude Include="src\tmnf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core\bulbtoys\git.h">
@@ -209,7 +209,7 @@
     <ClInclude Include="core\bulbtoys\version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\tmuf_mwcid.h">
+    <ClInclude Include="src\tmnf_mwcid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

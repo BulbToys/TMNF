@@ -7,9 +7,9 @@
 #include "../core/bulbtoys/utils.h"
 #include "../core/imgui/imgui.h"
 
-#include "tmuf_mwcid.h"
+#include "tmnf_mwcid.h"
 
-namespace TMUF
+namespace TMNF
 {
 	/* ===== N A M E S P A C E S ===== */
 
@@ -89,20 +89,20 @@ namespace TMUF
 		int size;
 		char* psz;
 
-		CFastString(const char* str = nullptr)
-		{
-			reinterpret_cast<uintptr_t(__thiscall*)(CFastString*, const char*)>(0x401660)(this, str);
-		}
-
-		~CFastString()
-		{
-			reinterpret_cast<void(__thiscall*)(CFastString*)>(0x4683E0)(this);
-		}
-
-		void SetString(int len, const char* str)
-		{
-			reinterpret_cast<void(__thiscall*)(CFastString*, int, const char*)>(0x440DC0)(this, len, str);
-		}
+		//CFastString(const char* str = nullptr)
+		//{
+		//	reinterpret_cast<uintptr_t(__thiscall*)(CFastString*, const char*)>(0x401660)(this, str);
+		//}
+		//
+		//~CFastString()
+		//{
+		//	reinterpret_cast<void(__thiscall*)(CFastString*)>(0x4683E0)(this);
+		//}
+		//
+		//void SetString(int len, const char* str)
+		//{
+		//	reinterpret_cast<void(__thiscall*)(CFastString*, int, const char*)>(0x440DC0)(this, len, str);
+		//}
 	};
 
 	struct SStringParamInt
@@ -117,24 +117,24 @@ namespace TMUF
 		int size;
 		wchar_t* pwsz;
 
-		CFastStringInt(const wchar_t* wstr = nullptr)
-		{
-			reinterpret_cast<uintptr_t(__thiscall*)(CFastStringInt*, const wchar_t*)>(0x401750)(this, wstr);
-		}
-
-		~CFastStringInt()
-		{
-			reinterpret_cast<void(__thiscall*)(CFastStringInt*)>(0x4F1030)(this);
-		}
-
-		void SetString(int len, const wchar_t* str)
-		{
-			SStringParamInt param;
-			param.pwsz = str;
-			param.size = len;
-			
-			reinterpret_cast<void(__thiscall*)(CFastStringInt*, SStringParamInt*)>(0x903A90)(this, &param);
-		}
+		//CFastStringInt(const wchar_t* wstr = nullptr)
+		//{
+		//	reinterpret_cast<uintptr_t(__thiscall*)(CFastStringInt*, const wchar_t*)>(0x401750)(this, wstr);
+		//}
+		//
+		//~CFastStringInt()
+		//{
+		//	reinterpret_cast<void(__thiscall*)(CFastStringInt*)>(0x4F1030)(this);
+		//}
+		//
+		//void SetString(int len, const wchar_t* str)
+		//{
+		//	SStringParamInt param;
+		//	param.pwsz = str;
+		//	param.size = len;
+		//	
+		//	reinterpret_cast<void(__thiscall*)(CFastStringInt*, SStringParamInt*)>(0x903A90)(this, &param);
+		//}
 	};
 
 	struct CMwId
@@ -255,32 +255,32 @@ namespace TMUF
 	/* ===== C O N S T A N T S ===== */
 
 	// Globals
-	inline uintptr_t BulbToys_GetTrackMania() { return Read<uintptr_t>(0xD6A2A4); }
+	inline uintptr_t BulbToys_GetTrackMania() { return Read<uintptr_t>(0xD68C44); }
 
-	inline uintptr_t BulbToys_GetVisionViewportDX9() { return Read<uintptr_t>(0xD70C00); }
+	inline uintptr_t BulbToys_GetVisionViewportDX9() { return Read<uintptr_t>(0xD705DC); }
 
 	/* ===== F U N C T I O N S ===== */
 
-	FUNC(0x935660, CFastString*, __thiscall, CMwId_GetName, CMwId* mw_id, CFastString* string);
-	FUNC(0x42BD90, CMwId*, , CMwId_CreateFromLocalName, CMwId* mw_id, const char* local_name);
-
-	FUNC(0x5F8420, uintptr_t, __thiscall, CGameCtnApp_GetCurrentInputBindings, uintptr_t game_ctn_app, int zero);
-
-	FUNC(0x8F7D10, void, __thiscall, CInputBindingsConfig_ClearBindings, uintptr_t input_bindings_config, unsigned int action, int mw_id);
-	FUNC(0x8F7CC0, unsigned int, __thiscall, CInputBindingsConfig_FindAction, uintptr_t input_bindings_config, SInputActionDesc* input_action_desc);
+	//FUNC(0x935660, CFastString*, __thiscall, CMwId_GetName, CMwId* mw_id, CFastString* string);
+	//FUNC(0x42BD90, CMwId*, , CMwId_CreateFromLocalName, CMwId* mw_id, const char* local_name);
+	//
+	//FUNC(0x5F8420, uintptr_t, __thiscall, CGameCtnApp_GetCurrentInputBindings, uintptr_t game_ctn_app, int zero);
+	//
+	//FUNC(0x8F7D10, void, __thiscall, CInputBindingsConfig_ClearBindings, uintptr_t input_bindings_config, unsigned int action, int mw_id);
+	//FUNC(0x8F7CC0, unsigned int, __thiscall, CInputBindingsConfig_FindAction, uintptr_t input_bindings_config, SInputActionDesc* input_action_desc);
 
 	/* ===== H E L P E R   F U N C S ===== */
 
 	// 0 = Mouse, 1 = Keyboard, 2+ = Joystick
 	LPVOID BulbToys_GetDI8Device(int index);
 
-	uintptr_t BulbToys_GetEngine(_Engine e);
-
+	//uintptr_t BulbToys_GetEngine(_Engine e);
+	
 	const char* BulbToys_GetClassName(uintptr_t vtable);
-
-	uintptr_t BulbToys_GetControlFromFrame(const char* frame, const char* control);
-
-	bool BulbToys_MwIsKindOf(uintptr_t mw, _MwClassId cid);
+	
+	//uintptr_t BulbToys_GetControlFromFrame(const char* frame, const char* control);
+	//
+	//bool BulbToys_MwIsKindOf(uintptr_t mw, _MwClassId cid);
 
 	/* ===== C O N S T E X P R   F U N C S ===== */
 
@@ -319,20 +319,20 @@ namespace TMUF
 /* ===== I M G U I ===== */
 namespace ImGui
 {
-	struct TMUF_TextSlice
+	struct TMNF_TextSlice
 	{
 		std::string str = "";
 		ImVec4 clr = ImVec4(.0f, .0f, .0f, .0f);
 
-		TMUF_TextSlice(std::string string, ImVec4 color) : str(string), clr(color) {}
+		TMNF_TextSlice(std::string string, ImVec4 color) : str(string), clr(color) {}
 	};
-	std::vector<TMUF_TextSlice> TMUF_Parse(const char* text);
+	std::vector<TMNF_TextSlice> TMNF_Parse(const char* text);
 
 	// Displays text according to TrackMania formatting rules. Unicode and certain TM formats are unsupported!
-	void TMUF_Text(const char* text);
-	void TMUF_TextEx(std::vector<TMUF_TextSlice>& slices, const char* tooltip = nullptr);
+	void TMNF_Text(const char* text);
+	void TMNF_TextEx(std::vector<TMNF_TextSlice>& slices, const char* tooltip = nullptr);
 
 	// CFastString equivalent of ImGui::InputText
-	void TMUF_InputFastString(TMUF::CFastString& fast_string, const char* label, char* buf, size_t buf_size, ImGuiInputTextFlags flags = 0,
-		ImGuiInputTextCallback callback = NULL, void* user_data = NULL);
+	//void TMNF_InputFastString(TMNF::CFastString& fast_string, const char* label, char* buf, size_t buf_size, ImGuiInputTextFlags flags = 0,
+	//	ImGuiInputTextCallback callback = NULL, void* user_data = NULL);
 }

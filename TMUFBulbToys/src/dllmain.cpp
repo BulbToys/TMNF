@@ -1,14 +1,14 @@
 #include <windows.h>
 
 #include "../core/bulbtoys.h"
-#include "tmuf.h"
+#include "tmnf.h"
 
 BOOL APIENTRY DllMain(HMODULE instance, DWORD reason, LPVOID)
 {
 	if (reason == DLL_PROCESS_ATTACH)
 	{
 		// Version check :3
-		if (!strncmp(reinterpret_cast<char*>(0xCCD45B), ":3", 2))
+		if (!strncmp(reinterpret_cast<char*>(0xCCB45B), ":3", 2))
 		{
 			BulbToys::SetupParams params;
 			params.instance = instance;
@@ -16,7 +16,7 @@ BOOL APIENTRY DllMain(HMODULE instance, DWORD reason, LPVOID)
 			{
 				LPVOID device = nullptr;
 
-				auto vision_viewport = TMUF::BulbToys_GetVisionViewportDX9();
+				auto vision_viewport = TMNF::BulbToys_GetVisionViewportDX9();
 				if (vision_viewport)
 				{
 					device = Read<LPVOID>(vision_viewport + 0x9F8);
@@ -26,18 +26,18 @@ BOOL APIENTRY DllMain(HMODULE instance, DWORD reason, LPVOID)
 			};
 			params.GetDI8KeyboardDevice = +[]()
 			{
-				return TMUF::BulbToys_GetDI8Device(1);
+				return TMNF::BulbToys_GetDI8Device(1);
 			};
 			params.GetDI8MouseDevice = +[]()
 			{
-				return TMUF::BulbToys_GetDI8Device(0);
+				return TMNF::BulbToys_GetDI8Device(0);
 			};
-			params.settings_file = "TMUF_BulbToys.ini";
+			params.settings_file = "TMNF_BulbToys.ini";
 			BulbToys::Setup(params);
 		}
 		else
 		{
-			Error("This version of TMUF is not supported.");
+			Error("This version of TMNF is not supported.");
 			return FALSE;
 		}
 	}
