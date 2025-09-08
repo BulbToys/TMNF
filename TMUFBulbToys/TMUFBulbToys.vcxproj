@@ -191,15 +191,9 @@
     <ClCompile Include="core\minhook\hook.c" />
     <ClCompile Include="core\minhook\trampoline.c" />
     <ClCompile Include="src\dllmain.cpp" />
-    <ClCompile Include="src\modules\analyser.cpp" />
     <ClCompile Include="src\modules\emotes_window.cpp" />
-    <ClCompile Include="src\modules\ghosts.cpp" />
-    <ClCompile Include="src\modules\profile.cpp" />
     <ClCompile Include="src\modules\image_test.cpp" />
-    <ClCompile Include="src\modules\trail.cpp" />
-    <ClCompile Include="src\modules\server.cpp" />
     <ClCompile Include="src\modules\test.cpp" />
-    <ClCompile Include="src\modules\stats.cpp" />
     <ClCompile Include="src\tmnf.cpp" />
   </ItemGroup>
   <ItemGroup>
