@@ -193,6 +193,7 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\modules\emotes_window.cpp" />
     <ClCompile Include="src\modules\image_test.cpp" />
+    <ClCompile Include="src\modules\physics_stuff.cpp" />
     <ClCompile Include="src\modules\test.cpp" />
     <ClCompile Include="src\tmnf.cpp" />
   </ItemGroup>
